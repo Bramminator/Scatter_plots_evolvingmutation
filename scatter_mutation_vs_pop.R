@@ -14,7 +14,7 @@ mutationfile_em_vector <- c()
 timepointlist <- c()
 cycle_points <- c("2500","5000","7500")
 for(i in cycle_points){
-  timepoints <- seq(paste0(8600,as.numeric(i)),paste0(9500,as.numeric(i)),by = 1000000)
+  timepoints <- seq(paste0(4400,as.numeric(i)),paste0(5300,as.numeric(i)),by = 1000000)
   timepointlist <- c(timepointlist, timepoints)
 }
 
@@ -89,7 +89,7 @@ long_pop_mutation_frame %>%
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation")) +
   
-  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_2500_mutation.png',
+  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_2500_mutation_halfway_simulation.png',
          height = 210,
          width  = 297,
          units= 'mm',
@@ -105,7 +105,7 @@ long_pop_mutation_frame %>%
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation")) +
   
-  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_5000_mutation.png',
+  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_5000_mutation_halfway_simulation.png',
          height = 210,
          width  = 297,
          units= 'mm',
@@ -121,7 +121,7 @@ long_pop_mutation_frame %>%
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation")) +
   
-  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_7500_mutation.png',
+  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_7500_mutation_halfway_simulation.png',
          height = 210,
          width  = 297,
          units= 'mm',
