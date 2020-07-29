@@ -18,7 +18,7 @@ costfile_nem_vector <- c()
 timepointlist <- c()
 cycle_points <- c("2500","5000","7500")
 for(i in cycle_points){
-  timepoints <- seq(paste0(4400,as.numeric(i)),paste0(5300,as.numeric(i)),by = 1000000)
+  timepoints <- seq(paste0(100,as.numeric(i)),paste0(900,as.numeric(i)),by = 1000000)
   timepointlist <- c(timepointlist, timepoints)
 }
 
@@ -133,50 +133,50 @@ pop_cost_frame <- merge(popframe,costframe)
 long_pop_cost_frame <- gather(pop_cost_frame,key = 'wt_or_mu', value = 'popsize',c(popsize_wt,popsize_mu))
 
 long_pop_cost_frame %>%
-  filter(time %in% seq(44002500, 53002500, by = 1000000)) %>%
+  filter(time %in% seq(1002500, 9002500, by = 1000000)) %>%
   ggplot(aes(x = popsize, y = cost, color = interaction(wt_or_mu,type))) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label = seed, hjust = -1)) +
   geom_smooth(method = "lm") +
-  ggtitle('cost vs popsize quarter cycle halfway simulation') +
+  ggtitle('cost vs popsize quarter cycle start simulation') +
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation", "Mutants constant mutation", "Wildtypes constant mutation")) +
 
   
-  ggsave('~/Documents/strepto/scatter_popsize_cost_em_nem/scatter_2500_maxcost06_halfway.png',
+  ggsave('~/Documents/strepto/scatter_popsize_cost_em_nem/scatter_2500_maxcost06_start.png',
          height = 210,
          width  = 297,
          units= 'mm',
          dpi= 150)
 
 long_pop_cost_frame %>%
-  filter(time %in% seq(44005000, 53005000, by = 1000000)) %>%
+  filter(time %in% seq(1005000, 9005000, by = 1000000)) %>%
   ggplot(aes(x = popsize, y = cost, color = interaction(wt_or_mu,type))) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label=seed, hjust = -1))+
   geom_smooth(method = "lm") +
-  ggtitle('cost vs popsize half cycle halfway simulation') +
+  ggtitle('cost vs popsize half cycle start simulation') +
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation", "Mutants constant mutation", "Wildtypes constant mutation")) +
   
-  ggsave('~/Documents/strepto/scatter_popsize_cost_em_nem/scatter_5000_maxcost06_halfway.png',
+  ggsave('~/Documents/strepto/scatter_popsize_cost_em_nem/scatter_5000_maxcost06_start.png',
          height = 210,
          width  = 297,
          units= 'mm',
          dpi= 150)
 
 long_pop_cost_frame %>%
-  filter(time %in% seq(44007500, 53007500, by = 1000000)) %>%
+  filter(time %in% seq(1007500, 9007500, by = 1000000)) %>%
   ggplot(aes(x = popsize, y = cost, color = interaction(wt_or_mu,type))) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label = seed, hjust = -1)) +
   geom_smooth(method = "lm") +
-  ggtitle('cost vs popsize three-quarter cycle halfway simulation') +
+  ggtitle('cost vs popsize three-quarter cycle start simulation') +
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation", "Mutants constant mutation", "Wildtypes constant mutation")) +
 
   
-  ggsave('~/Documents/strepto/scatter_popsize_cost_em_nem/scatter_7500_maxcost06_halfway.png',
+  ggsave('~/Documents/strepto/scatter_popsize_cost_em_nem/scatter_7500_maxcost06_start.png',
          height = 210,
          width  = 297,
          units= 'mm',
