@@ -14,7 +14,7 @@ mutationfile_em_vector <- c()
 timepointlist <- c()
 cycle_points <- c("2500","5000","7500")
 for(i in cycle_points){
-  timepoints <- seq(paste0(4400,as.numeric(i)),paste0(5300,as.numeric(i)),by = 1000000)
+  timepoints <- seq(paste0(100,as.numeric(i)),paste0(900,as.numeric(i)),by = 1000000)
   timepointlist <- c(timepointlist, timepoints)
 }
 
@@ -80,7 +80,7 @@ pop_mutation_frame <- merge(popframe,mutationframe)
 long_pop_mutation_frame <- gather(pop_mutation_frame,key = 'wt_mu', value = 'popsize',c(popsize_wt,popsize_mu))
 
 long_pop_mutation_frame %>%
-  filter(time %in% seq(44002500, 53002500, by = 1000000)) %>%
+  filter(time %in% seq(1002500, 9002500, by = 1000000)) %>%
   ggplot(aes(x = popsize, y = mutation, color = interaction(wt_mu,type))) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label = seed, hjust = -1)) +
@@ -89,14 +89,14 @@ long_pop_mutation_frame %>%
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation")) +
   
-  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_2500_mutation_halfway_simulation.png',
+  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_2500_mutation_start_simulation.png',
          height = 210,
          width  = 297,
          units= 'mm',
          dpi= 150)
 
 long_pop_mutation_frame %>%
-  filter(time %in% seq(44005000, 53005000, by = 1000000)) %>%
+  filter(time %in% seq(1005000, 9005000, by = 1000000)) %>%
   ggplot(aes(x = popsize, y = mutation, color = interaction(wt_mu,type))) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label=seed, hjust = -1))+
@@ -105,14 +105,14 @@ long_pop_mutation_frame %>%
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation")) +
   
-  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_5000_mutation_halfway_simulation.png',
+  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_5000_mutation_start_simulation.png',
          height = 210,
          width  = 297,
          units= 'mm',
          dpi= 150)
 
 long_pop_mutation_frame %>%
-  filter(time %in% seq(44007500, 53007500, by = 1000000)) %>%
+  filter(time %in% seq(1007500, 9007500, by = 1000000)) %>%
   ggplot(aes(x = popsize, y = mutation, color = interaction(wt_mu,type))) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label = seed, hjust = -1)) +
@@ -121,7 +121,7 @@ long_pop_mutation_frame %>%
   theme_bw() +
   scale_colour_discrete(name = "Type", labels = c('Mutants evolving mutation', "Wildtypes evolving mutation")) +
   
-  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_7500_mutation_halfway_simulation.png',
+  ggsave('~/Documents/strepto/scatter_popsize_mutation_em/scatter_7500_mutation_start_simulation.png',
          height = 210,
          width  = 297,
          units= 'mm',
