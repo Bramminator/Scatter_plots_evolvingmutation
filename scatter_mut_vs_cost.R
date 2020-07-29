@@ -13,7 +13,7 @@ costfile_em_vector <- c()
 timepointlist <- c()
 cycle_points <- c("2500","5000","7500")
 for(i in cycle_points){
-  timepoints <- seq(paste0(4400,as.numeric(i)),paste0(5300,as.numeric(i)),by = 1000000)
+  timepoints <- seq(paste0(8600,as.numeric(i)),paste0(9500,as.numeric(i)),by = 1000000)
   timepointlist <- c(timepointlist, timepoints)
 }
 
@@ -80,49 +80,49 @@ print(mut_cost_frame)
 
 
 mut_cost_frame %>%
-  filter(time %in% seq(44002500, 53002500, by = 1000000)) %>%
+  filter(time %in% seq(86002500, 95002500, by = 1000000)) %>%
   ggplot(aes(x = cost, y = mut_wt)) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label = seed, hjust = -1)) +
   geom_smooth(method = "lm") +
-  ggtitle('mutation-rate vs cost quarter cycle halfway simulation') +
+  ggtitle('mutation-rate vs cost quarter cycle end simulation') +
   theme_bw() +
   ylab("mutation-rate") +
   
-  ggsave('~/Documents/strepto/scatter_cost_mut_em_nem/scatter_mut_cost_2500halfway.png',
+  ggsave('~/Documents/strepto/scatter_cost_mut_em_nem/scatter_mut_cost_2500end.png',
          height = 210,
          width  = 297,
          units= 'mm',
          dpi= 150)
 
 mut_cost_frame %>%
-  filter(time %in% seq(44005000, 53005000, by = 1000000)) %>%
+  filter(time %in% seq(86005000, 95005000, by = 1000000)) %>%
   ggplot(aes(x = cost, y = mut_wt)) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label=seed, hjust = -1))+
   geom_smooth(method = "lm") +
-  ggtitle('mutation-rate vs cost half cycle halfway simulation') +
+  ggtitle('mutation-rate vs cost half cycle end simulation') +
   theme_bw() +
   ylab("mutation-rate") +
 
-  ggsave('~/Documents/strepto/scatter_cost_mut_em_nem/scatter_mut_cost_5000halfway.png',
+  ggsave('~/Documents/strepto/scatter_cost_mut_em_nem/scatter_mut_cost_5000end.png',
          height = 210,
          width  = 297,
          units= 'mm',
          dpi= 150)
 
 mut_cost_frame %>%
-  filter(time %in% seq(44007500, 53007500, by = 1000000)) %>%
+  filter(time %in% seq(86007500, 95007500, by = 1000000)) %>%
   ggplot(aes(x = cost, y = mut_wt)) +
   geom_point(shape = 16, size = 3) +
   geom_text(aes(label = seed, hjust = -1)) +
   geom_smooth(method = "lm") +
-  ggtitle('mutation-rate vs cost three-quarter cycle halfway simulation') +
+  ggtitle('mutation-rate vs cost three-quarter cycle end simulation') +
   theme_bw() +
   ylab("mutation-rate") +
 
   
-  ggsave('~/Documents/strepto/scatter_cost_mut_em_nem/scatter_mut_cost_7500halfway.png',
+  ggsave('~/Documents/strepto/scatter_cost_mut_em_nem/scatter_mut_cost_7500end.png',
          height = 210,
          width  = 297,
          units= 'mm',
